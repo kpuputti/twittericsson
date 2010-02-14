@@ -1,0 +1,10 @@
+import urllib, logging
+from django.utils import simplejson as json
+from django.shortcuts import render_to_response
+from django.http import HttpResponse
+
+def update(request):
+
+    return HttpResponse("twittericsson")
+
+
