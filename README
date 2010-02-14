@@ -1,0 +1,4 @@
+To run locally:
+
+-Download the Google App Engine SDK form http://code.google.com/appengine/downloads.html
+-Deploy the application to the App Engine SDK dev server
