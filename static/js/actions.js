@@ -34,7 +34,7 @@ function updateFeed() {
 					    $('.feed').append(tweet);
 					    
 					} else {
-					    alert("No results found");
+					    alert("Geocoder :: No results found");
 					}
 				    } else {
 					alert("Geocoder failed due to: " + status);
