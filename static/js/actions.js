@@ -1,16 +1,14 @@
-var USER = 'nerd_dev';
-var PASS = '12wR4vKL4..S';
+var LATITUDE = '';
+var LOGNITUDE = '';
+
 
 function updateFeed() {
-    console.log('update feed');
 
     $.ajax({
 	    type: 'GET',
 	    url: 'http://api.twitter.com/1/statuses/home_timeline.json?callback=?',
 	    dataType: 'json',
-	    username: USER,
-	    password: PASS,
-	    success: function(data) {
+		success: function(data) {
 		$.each(data, function(i, res){		 
 		        var tweet = '<div class="tweet">' +
 			    '<p><b>' + res.user.screen_name + '</b> ' +
@@ -19,7 +17,8 @@ function updateFeed() {
 			    '</div>';
 				  
 		        $('.feed').append(tweet).show();
-		   		
+			console.log('text: ' + res.text);
+			console.log('geo: ' + res.geo);
 	        });
 	     }
 	});
@@ -28,48 +27,58 @@ function updateFeed() {
 function tweet() {
 
     var post = $('#tweet_text').val();
-    console.log('tweeting: ' + post);
-    
-    $.getJSON(UPDATE_URL,
-	      {text: post},
-	      function(data) {
-		  console.log("update done");
-	      });
-    
-    //var auth = make_basic_auth('nerd_dev','12wR4vKL4..S');
+    var username = $('#username').val();
+    var password = $('#password').val();
 
-    /*
-    $.ajax({
-	    type: 'POST',
-		url: 'http://twitter.com/statuses/update.json?jsonp=?',
-		dataType: 'json',
-		data: 'status=All your base are belong to us',
-		beforeSend: function(req) {
-                req.setRequestHeader('Authorization', auth);},
-		jsonp: function(data) {
-                console.log('data: ' + data);
-	   }
-	  });
-    */
-    /*
-    $.ajax({
-            type: 'POST',
-	    url: 'http://twitter.com/statuses/update.json?callback=?',
-	    dataType: 'json',
-	    username: USER,
-	    password: PASS,
-	    data: ({status : post}),
-	    success: function(data) {
-		console.log('success! ' + data);
-	    }
-        });
+    if (username != '' && password != '') {
 
-    */
+	console.log('lat: ' + LATITUDE);
+	console.log('long: ' + LONGITUDE);
+
+	$.getJSON(UPDATE_URL,
+		  {
+		      username: username,
+			  password: password,
+			  text: post, 
+			  lat: LATITUDE, 
+			  long: LONGITUDE
+			  },
+		  function(data) {
+		      console.log("update done");
+		  });
+    
+    }
+   
+}
+
+function getGeoData() {
+
+    //determine if the handset has client side geo location capabilities
+    if(geo_position_js.init()){
+	geo_position_js.getCurrentPosition(
+					   function(data){
+					           
+					       LATITUDE = data.coords.latitude;
+					       LONGITUDE = data.coords.longitude;
+
+					   },
+
+					   function(data){
+					       alert('could not retrieve geo data');
+					   }
+					   );
+    }
+    else{
+	alert("Functionality not available");
+    }
+
+
 
 }
 
+
 function make_basic_auth(user, pass) {
-    console.log('calc: ' + user + ', ' + pass);
+   
     var tok = user + ':' + pass;
     var hash = Base64.encode(tok);
     return "Basic " + hash;
