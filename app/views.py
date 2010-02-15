@@ -4,11 +4,16 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.contrib.sites.models import Site
 
+##
+## Shows the main view.
+##
 def index(request):
     host = request.META.get('HTTP_HOST')
     return render_to_response('app/index.html', {'host': host})  
 
-
+##
+## Is used for the tweeting ajax call.
+##
 def update(request):
     logging.info('update!')
 
