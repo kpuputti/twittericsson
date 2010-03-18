@@ -18,6 +18,9 @@ urlpatterns = patterns('',
     # Example:
     # (r'^foo/', include('foo.urls')),
 
+    # Dispatch all urls to the client app.
+    (r'^', include('client.urls')),
+
     # Uncomment this for admin:
 #     (r'^admin/', include('django.contrib.admin.urls')),
 )
