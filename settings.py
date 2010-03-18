@@ -122,6 +122,13 @@ INSTALLED_APPS = (
 #    'django.contrib.sites',
 )
 
+# Api key for appspot.com
+GOOGLE_API_KEY = 'ABQIAAAA2K0hgnNIxIgkmcEQ0FRbShRlOb26qSyU154aZeLwOrF4C7-DphTEy-R4LtVHjeun7SqQAScRJOH2lQ'
+
+# Api key for localhost.
+if DEBUG:
+    GOOGLE_API_KEY = 'ABQIAAAA2K0hgnNIxIgkmcEQ0FRbShT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQI60WedAlreuma-1LdeuiZuuBWYA'
+
 # Import local setting to override any global ones.
 try:
     from local_settings import *
