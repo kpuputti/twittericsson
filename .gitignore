@@ -6,3 +6,4 @@
 .google_appengine
 django/*
 local_settings.py
+index.yaml
