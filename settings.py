@@ -20,8 +20,8 @@ DEBUG = False
 
 # Set DEBUG to true if defined in local_settings.
 try:
-    from local_settings import debug
-    DEBUG = debug
+    from local_settings import DEBUG as LOCAL_DEBUG
+    DEBUG = LOCAL_DEBUG
 except ImportError:
     pass
 
