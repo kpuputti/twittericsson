@@ -4,3 +4,4 @@
 *.pyo
 *.save
 .google_appengine
+django/*
