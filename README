@@ -1,0 +1,44 @@
+Twittericsson
+=============
+
+Twittericsson is a Twitter client created for the Ericsson Application
+Awards http://www.ericssonapplicationawards.com/.
+
+Twittericsson uses Django Web framework http://www.djangoproject.com/
+and is deployed at the Google App Engine
+http://code.google.com/appengine/.
+
+Authors:
+Kimmo Puputti, kpuputti at gmail
+Hannu Lyytikainen, lyyder at gmail
+Jukka Lariola, jukka.lariola at gmail
+
+Installation
+------------
+
+These instructions should work for Linux and OSX.
+
+1. Go to the directory where you want to install the project:
+cd $PROJECT
+
+2. Clone the GIT repository (needs permissions):
+git clone git@github.com:kpuputti/twittericsson.git
+
+Now you have a directory $PROJECT/twittericsson for the project. The
+project outline is created using the Google App Engine Helper for
+Django http://code.google.com/p/google-app-engine-django/.
+
+3. Download Google App Engine SDK:
+http://code.google.com/appengine/downloads.html
+
+4. Unzip the SDK zip file i.e. to the $PROJECT folder.
+
+5. Create a symlink to the SDK in the project directory:
+ln -s $PROJECT/google_appengine $PROJECT/twittericsson/.google_appengine
+
+6. Download Django 1.1:
+http://www.djangoproject.com/download/
+
+7. Move the 'django' source directory inside the downloaded archive
+file to $PROJECT/django (sorry for this, could not get globally
+installed django to work with the app engine helper).
