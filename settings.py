@@ -122,6 +122,10 @@ INSTALLED_APPS = (
 #    'django.contrib.sites',
 )
 
+# Token for the Twitter OAuth API.
+OAUTH_CONSUMER_TOKEN = ''
+OAUTH_CONSUMER_SECRET = ''
+
 # Import local setting to override any global ones.
 try:
     from local_settings import *
