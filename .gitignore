@@ -7,3 +7,4 @@
 django/*
 local_settings.py
 index.yaml
+tweepy/*
