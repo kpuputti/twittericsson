@@ -42,3 +42,26 @@ http://www.djangoproject.com/download/
 7. Move the 'django' source directory inside the downloaded archive
 file to $PROJECT/django (sorry for this, could not get globally
 installed django to work with the app engine helper).
+
+Running the application
+-----------------------
+
+Go to the project root directory and run:
+python manage.py runserver
+
+Development
+-----------
+
+First, create a local_settings.py file in the project root folder and
+add DEBUG = True in the file. Then run the django server and start
+coding.
+
+Let's keep the code clean mmkay:
+http://google-styleguide.googlecode.com/svn/trunk/pyguide.html
+
+And it would we really cool to be very pythonic:
+http://docs.python.org/dev/howto/doanddont.html
+http://docs.python.org/dev/howto/functional.html
+http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
+
+Happy coding!
