@@ -43,6 +43,11 @@ http://www.djangoproject.com/download/
 file to $PROJECT/django (sorry for this, could not get globally
 installed django to work with the app engine helper).
 
+8. Download/clone the tweepy repository
+http://github.com/joshthecoder/tweepy and move the 'tweepy' source
+folder in the cloned repository to the twittericsson project root
+directory.
+
 Running the application
 -----------------------
 
